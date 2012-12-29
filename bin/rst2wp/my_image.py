@@ -98,7 +98,13 @@ class MyImageDirective(directives.images.Image, DownloadDirective):
 
         self.current_form = ''
         self.current_uri = None
-        self.current_filename = self.download_image(self.uri)
+        # check if supplied address is local path
+        if os.path.exists(self.uri):
+          self.current_filename = self.uri
+        else: 
+          self.current_filename = self.download_image(self.uri)
+
+        print "filename: %s" % self.current_filename
 
         self.run_exiftran()
 
@@ -134,7 +140,10 @@ class MyImageDirective(directives.images.Image, DownloadDirective):
         # image, so could have any weird casing of .jpg
         name, ext = os.path.splitext(self.current_filename)
         if not ext.lower() == '.jpg': return
-        subprocess.check_call(["exiftran", "-a", self.current_filename, '-i'])
+        # relies of exiftran:  sudo apt-get install exiftran
+        tmpfile = '/var/tmp/' + os.path.basename(self.current_filename)
+        subprocess.check_call(["exiftran", "-a", self.current_filename, '-o', tmpfile])
+        self.current_filename = tmpfile
 
     def run_rotate(self):
         # N.B. doesn't upload previous version, since we don't want

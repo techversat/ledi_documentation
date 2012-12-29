@@ -16,6 +16,8 @@ import argparse
 from xdg import BaseDirectory
 import ConfigParser
 import sys
+
+
 import os.path
 import tempfile, subprocess, time
 from docutils import core, io, nodes, utils
@@ -59,15 +61,30 @@ class MyTranslator(docutils.writers.html4css1.HTMLTranslator):
             # Hackishly insert the image title into the image tag
             self.body[-1] = image.replace('/>', 'title="%s" />'%self.attval(title))
 
+
 class ValidityCheckerTransform(docutils.transforms.Transform):
     default_priority = 99
+
     def apply(self):
         fields = self.document.settings.bibliographic_fields
         app = self.document.settings.application
 
+        use_section_title = True
+
         def _no_field(msg, msg2=''):
             if msg2: msg = msg+msg2
             raise TypeError, msg
+
+        # we use 1st section's title
+        if use_section_title:
+          # print self.document
+          i = self.document.first_child_matching_class(docutils.nodes.section)
+          j = self.document[i].first_child_matching_class(docutils.nodes.title)
+          title = str( self.document[i][j].astext())
+          fields['title'] = title
+          print "using '%s' as title" % title
+          # delete the node since we don't want have title appear again
+          del(self.document[i][j]) 
 
         if 'title' not in fields:
             _no_field("title missing", """
@@ -143,7 +160,7 @@ class Application(object):
 
             config.add_section('config')
             config.set('config', 'data_storage', 'file')
-            config.set('config', 'publish_default', 'yes')
+            config.set('config', 'publish_default', 'no')
             config.set('config', 'save_uploads', 'no')
             config.set('config', 'scale_images', 'no')
 
@@ -197,6 +214,7 @@ class Rst2Wp(Application):
         self.list_tags = False
         self.list_categories = False
         self.publish = None
+        self.stylesheet = None
 
     @property
     def data_storage(self):
@@ -209,6 +227,8 @@ class Rst2Wp(Application):
                             help="don't upload; render to HTML and display in $BROWSER")
         parser.add_argument('-c', '--config', dest='alt_config', nargs='?', type=str,
                             help='use alternate config (see README for details)')
+        parser.add_argument('-s', '--style', dest='css', nargs='?', type=str,
+                            help="provide the style sheet")
         parser.add_argument('--dont-check-tags', action='store_true',
                             help="don't check categories/tags for existance")
         group = parser.add_mutually_exclusive_group(required=True)
@@ -227,6 +247,9 @@ class Rst2Wp(Application):
 
         options = parser.parse_args(args, self)
         if isinstance(self.alt_config, str): self.config_name = self.alt_config
+        if isinstance(self.css, str):
+          print "setting %s" % self.css
+          self.stylesheet = self.css
 
     def prompt(self, msg):
         return raw_input(msg)
@@ -342,14 +365,26 @@ class Rst2Wp(Application):
         new_line = '{keystring} {value}'.format(keystring=keystring, value=value.encode('utf8'))
 
         lines = self.text.split('\n')
+
+        # search to see if the keystring exists
+        # any([i.startswith('v') for i in v])
+
+        has_keystring = False
+
         for i in range(len(lines)):
-            if lines[i].strip() == '':
+            # if lines[i].strip() == '':
                 # Didn't have that field
-                lines.insert(i, new_line)
-                break
+                # lines.insert(i, new_line)
+                # break
             if lines[i].startswith(keystring):
                 lines[i] = new_line
+                has_keystring = True
                 break
+
+        # put it at the end of the text if it doesn't exist
+        if has_keystring==False:
+          #  lines.append(new_line)
+          lines.insert(0, new_line)
 
         self.text = '\n'.join(lines)
 
@@ -436,29 +471,45 @@ class Rst2Wp(Application):
         if not self.dont_check_tags and not self.preview:
             validity.Validity.verify_categories(wp, categories)
 
-        output = core.publish_parts(source=text, writer=writer,
+
+        settings_dict = {
+          'wordpress_instance' : wp,
+          'application': self,
+          'bibliographic_fields': {
+          'categories': categories
+          },
+          'directive_uris': directive_uris,
+          'used_images': used_images,
+          'filename': self.filename,
+          'syntax_highlight' : 'short',
+          'embed_stylesheet' : 1
+        }
+
+        if not self.stylesheet==None:
+          if os.path.exists(self.stylesheet):
+            settings_dict['stylesheet_path'] = self.stylesheet
+          else:
+            print "WARN: stylesheet %s does not exist" % self.stylesheet
+
+        output = core.publish_parts(source=text,
+                                    writer=writer,
                                     reader=reader,
-                                    settings_overrides={
-                'wordpress_instance' : wp,
-                'application': self,
-                'bibliographic_fields': {
-                    'categories': categories
-                    },
-                'directive_uris': directive_uris,
-                'used_images': used_images,
-                # FIXME: probably a nicer way to do this
-                'filename': self.filename,
-                })
+                                    settings_overrides=settings_dict)
         #print yaml.dump(output, default_flow_style=False)
-        body = output['body']
+        body = output['stylesheet'] + output['body']
 
         if self.preview:
             return self.run_preview(output)
 
 
         fields = reader.document.settings.bibliographic_fields
+        
+        # fields['categories'] is type 'docutils.nodes.reprunicode'
+        print str(fields['categories'])
 
-        categories = [wordpresslib.WordPressCategory(name=cat) for cat in fields['categories']]
+        categories = [wordpresslib.WordPressCategory(name=str(fields['categories']))]
+        # categories = [wordpresslib.WordPressCategory(name=cat) for cat in fields['categories']]
+
         tags = []
         for tag in fields.get('tags', []):
             if wp.has_tag(tag):
@@ -470,12 +521,17 @@ class Rst2Wp(Application):
         # with spaces, which ought to be safe.
         body = utils.replace_newlines(body)
 
+        print "categories: %s" % str(categories)
+
         new_post_data = {
             'title' : unicode(fields['title']),
             'categories': categories,
             'tags': tags,
             'description': body,
             }
+
+        if 'parent_id' in fields.keys():
+          new_post_data['parent_id'] = int(fields['parent_id'])
 
         # Publish priority:
         # 1. --publish/--no-publish
@@ -499,6 +555,8 @@ class Rst2Wp(Application):
 
             post.__dict__.update(new_post_data)
 
+            print "post_id %d, parent_id %d, title: %s" % (post.id, post.parent_id, post.title)
+
             if fields.get('type') == 'page':
                 wp.edit_page(post_id, post, publish)
             else:
@@ -514,6 +572,7 @@ class Rst2Wp(Application):
                 post_id = wp.new_page(post, publish)
             else:
                 post_id = wp.new_post(post, publish)
+
             self.save_post_info(reader.document, 'id', str(post_id))
 
         self.save_post_info(reader.document, 'title', fields['title'])
