@@ -7,40 +7,83 @@
 0x03 Operating LEDI
 ===================
 
+In this document, we will discuss various features LEDI. We will explain how to
+set it up and operate it. From here on, we will assume you have
+a completely assembled LEDI. We also assume you have an Android phone that
+can be used to communicate with LEDI.
+
 When it's first powered up, LEDI will go into a clock mode. The clock starts
 at "00:00", since LEDI does not keep track of time when it's powered off.
-However, once powered on it will constantly keep accurate time across various
+Once powered on, however, it will constantly keep accurate time across various
 operating modes. Also in addition to HH:MM clock digits, you will see the binary
 indicator ticking every second. 
 
 
+Power Switches
+--------------
+There are 2 slide switches on the board. With the barrel jack faced down, the 
+slide switch left of it is "on/off" switch. The slide switch to the right of the
+barrel jack is the "3v/5v" toggle switch. Slide the power switch up to turn the
+power on and supply regulated 5 volts to the circuit.
+
+
 Tactile Buttons
 ---------------
-
-There are 3 buttons on the board.
+There are 4 buttons on the board.
 
 * 1st button resets the device
 * 2nd button puts LEDI into Conway's Game-of-Life display mode
 * 3rd button allows you to set the time
   - short press for incrementing one minute at a time
   - long press for fast-forwarding time
+* 4th button (located near Bluetooth module) resets the bluetooth module.
 
 
-
-Bluetooth Bonding
+Bluetooth Pairing
 -----------------
-
-Everytime LEDI is reset, the bluetooth module will put it into discoverable mode.
+Everytime LEDI's power is reset, the bluetooth module will go into discoverable mode.
 Other bluetooth devices can easily scan and pair with LEDI. 
 
 Let's first "bond" with LEDI using an Android phone. Go to::
 
   Settings -> Wireless Settings -> Bluetooth Settings
 
+Hit **scan** for devices. Your device should show up and it will be called either 
 
-Android Apps
-------------
+* linvor
+* HC-06
 
+Select the device and you will get a bluetooth pairing request.
+Use the passcode **1234** to establish the pairing.
+
+
+LEDIManager Android App
+-----------------------
+
+|icon1|
+
+We have written an Android app specifically designed to work with LEDI. This app is the
+main controller for LEDI which allows it to communicate with the "world".
+
+LEDIManager sends various notifications from your Android phone to LEDI. It maintains
+stable connection to LEDI and allows user to interact with LEDI wirelessly.
+
+The current list of LEDIManager features:
+
+#. Gmail, sms, call, alarm notifications supported
+#. Remotely set current time
+#. Send arbitrary message from your Android phone
+#. Virtual interface that allows you to "draw" on LEDI wirelessly
+
+When you start the app
+~~~~~~~~~~~~~~~~~~~~~~
+Your app will look like this:
+
+|screen_off|
+
+
+Other Android Apps
+------------------
 We are currently working on making a customized Android app for LEDI. In the meantime,
 there are slew of available Android Apps that just works with LEDI. Almost all of them are
 free. For example, I've tested:
@@ -101,7 +144,40 @@ For example, I am powering the Arduino via the power output pins:
 .. another power here
 
 
-
 .. _Sena: https://play.google.com/store/apps/details?id=com.sena.bterm&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5zZW5hLmJ0ZXJtIl0.
 .. _BlueTerm: https://play.google.com/store/apps/details?id=es.pymasde.blueterm&feature=search_result#?t=W251bGwsMSwxLDEsImVzLnB5bWFzZGUuYmx1ZXRlcm0iXQ..
 .. _Sparkfun: https://www.sparkfun.com/products/114
+
+
+.. |icon1| image:: /nas/docs/techversat/web/img/android_ledi_96x96.png
+   :uploaded: http://techversat.com/wp-content/uploads//android_ledi_96x96.png
+.. |screen_on| image:: /nas/docs/techversat/web/img/screenshot_onex_on.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_on-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_on.png
+   :scale: 50
+   :width: 300
+.. |screen_off| image:: /nas/docs/techversat/web/img/screenshot_onex_off.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_off-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_off.png
+   :scale: 50
+   :width: 300
+.. |screen_search| image:: /nas/docs/techversat/web/img/screenshot_onex_search.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_search-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_search.png
+   :scale: 50
+   :width: 300
+.. |screen_select| image:: /nas/docs/techversat/web/img/screenshot_onex_search2.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_search2-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_search2.png
+   :scale: 50
+   :width: 300
+.. |screen_vledi1| image:: /nas/docs/techversat/web/img/screenshot_onex_vledi1.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_vledi1-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_vledi1.png
+   :scale: 50
+   :width: 600
+.. |screen_vledi2| image:: /nas/docs/techversat/web/img/screenshot_onex_vledi2.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_vledi2-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_vledi2.png
+   :scale: 50
+   :width: 600

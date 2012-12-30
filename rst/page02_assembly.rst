@@ -12,7 +12,7 @@ Just got your LEDI DIY kit, so what's next?
 In this page, we are going to show you:
 
 * `What's Inside The Bag`_
-* `Components Explaination`_
+* `Components Explanation`_
 * `Tools Required`_
 * `Soldering the Parts`_
 * `Testing the Circuit`_
@@ -104,8 +104,8 @@ Acrylic adaptor plate   2          Transparent acrylic adaptor                  
 
 .. _Capacitor:
 
-Components Explaination
------------------------
+Components Explanation
+----------------------
 
 Before assembly, let's make sure we have sufficient understanding about the components
 used in this project, understanding this section will ensure successful completion of your build.
