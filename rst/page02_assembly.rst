@@ -108,73 +108,80 @@ Components Explanation
 ----------------------
 
 Before assembly, let's make sure we have sufficient understanding about the components
-used in this project, understanding this section will ensure successful completion of your build.
+used in this project.
 
 
-#. **Electrolytic Capacitor** (`wiki capacitor <http://en.wikipedia.org/wiki/Electrolytic_capacitor>`_)
++ **Electrolytic Capacitor** (`wiki capacitor <http://en.wikipedia.org/wiki/Electrolytic_capacitor>`_)
 
-   |pt_cap1| They look like aluminum cylinders wrapped in black plastic with one short and
-   one long leg. Please note that **ORIENTATION MATTERS** while you are placing the component on the PCB. 
-   **The short leg is the negative (-) terminal**. This negative terminal
-   is also indicated on the plastic covering. The plastic cover will have a strip going
-   down on the negative terminal side. In our design, negative terminal connects to GROUND.
+   |pt_cap1| 
+
+   - Look like aluminum cylinders wrapped in black plastic with one short and one long leg. 
+   - **ORIENTATION MATTERS** while you are placing this component on the PCB. 
+   - The short leg, the side with strip, is **the negative (-) terminal**. 
+   - In our design, negative terminal connects to GROUND and have a negative sign bar on the PCB. |tut_cap_neg|
 
 .. _Rectifier:
 
-#. **Reverse Voltage Protection Diode** (`wiki diode <http://en.wikipedia.org/wiki/Diode>`_) (`wiki rectifier <http://en.wikipedia.org/wiki/Rectifier>`_)
++ **Reverse Voltage Protection Diode** (`wiki diode <http://en.wikipedia.org/wiki/Diode>`_) (`wiki rectifier <http://en.wikipedia.org/wiki/Rectifier>`_)
 
-   |pt_diode| This part looks like a small black cynlinder. It allows current to flow in one
-   direction and not in the other. In this project, we are using the popular 1.0A
-   general purpose silion rectifier diode - 1N4001, which serves as converter from AC to DC
-   current. **ORIENTATION MATTERS** for all diodes. A small white strip on one end indicates the blocking side. 
-   You will need to look at the PCB carefully and make sure the side with the strip is properly 
-   aligned with the indicated strip on the PCB silkscreen (white labels on PCB).
+   |pt_diode|
+ 
+   - This part looks like a small black cynlinder. 
+   - It allows current to flow in one direction and not in the other. 
+   - We are using the popular 1.0A general purpose silion rectifier diode - 1N4001, which serves as converter from AC to DC current. 
+   - **ORIENTATION MATTERS** for all diodes. Small white strip on one end indicates the negative side. 
+   - Aligned with the indicated strip on the PCB silkscreen (white labels on PCB).
 
 .. _`Zener Diode 3.3v`:
 
-#. **Zener Diode 3.3v** (`wiki zener diode <http://en.wikipedia.org/wiki/Zener_diode>`_)
++ **Zener Diode 3.3v** (`wiki zener diode <http://en.wikipedia.org/wiki/Zener_diode>`_)
 
-   |pt_zdiode| This part also looks like a cylinder, but in orange. It is similar to the diode
-   described above, but allows current to flow in the reverse direction when the
-   voltage is above a certain value. Therefore the **ORIENTATION MATTERS** for this component too.
-   The black strip on one end indicates the "blocking" side. You will need to carefully match 
-   this strip with the PCB silkscreen.
+   |pt_zdiode| 
+
+   - This part also looks like a cylinder, but in orange. 
+   - Like diode, but allows current to flow in the reverse direction when the voltage is above a certain value. 
+   - Therefore **ORIENTATION MATTERS** for this component too.
+   - Black strip on one end indicates the "blocking" side. Match carefully this strip with the PCB silkscreen.
 
 .. _LED:
 
-#. **LED** (`light-emitting diode <http://en.wikipedia.org/wiki/LED>`_)
++ **LED** (`light-emitting diode <http://en.wikipedia.org/wiki/LED>`_)
 
-   |pt_led| One of the most common parts you can find in electronic kits or even at your
-   local RadioShack, this part also has two legs - one short, one long. The short leg is the
-   (-) terminal. Make sure the shorter leg connects to GROUND.
+   |pt_led| 
+
+   - One of the most common parts you can find in electronic kits or even at your local RadioShack.
+   - Emits light when current pass through.
+   - This part has two legs - one short, one long. Short leg is the (-) terminal. 
+   - Make sure the shorter leg connects to GROUND.
 
 .. _Resistor:
 
-#. **Resistor** (`wiki resistor <http://en.wikipedia.org/wiki/Resistor>`_)
++ **Resistor** (`wiki resistor <http://en.wikipedia.org/wiki/Resistor>`_)
 
-   |pt_r15| You will need to be careful about getting the resistor values right.
-   Unlike other components discussed, the **orientation does NOT matter.** You can stick
-   in the resistor in either direction onto the PCB. 
-   Refer to the following resistor color code to determine their value:
+   |pt_r15| 
+
+   - Make sure you are getting the resistor values right by understanding the color scheme.
+   - A multimeter would be handy to measure the exact resistance value.
+   - Unlike other components discussed, the **orientation does NOT matter.** 
+   - You can stick in the resistor in either direction onto the PCB. 
+   - Refer to the following resistor color code to determine their value:
 
    |rescode|
 
-   For example, if you see `red - yellow - black - orange`, you can read
+   For example, on a 5-Band color code resistor, if you see `red - yellow - black - orange`:
 
-::
+   ::
 
-    red   yellow  black  orange
-      2        4      0      1k   ==  240k
+    red   yellow  black      orange
+      2        4      0    *     1k   ==  240k
 
-Beside reading the color directly, it is always good to have a multimeter 
-handy to measure the exact resistance. 
 
 `Back to top`_
 
 Tools Required
 ---------------
 
-OK, now that you understanding the major components going into LEDI, let's talk about 
+Now that you understanding the major components going into LEDI, let's talk about 
 tools that you would need:
 
 ====================================  ====================
@@ -210,130 +217,102 @@ Here are the steps we will take
 #. Install the app
 #. Play with it!
 
-If you've never soldered before, it might be good to do some prep reading or
-even prep practice before you go into touching the components. It's easy to solder but 
-hard to take out sometime.
-There are lots of great videos and tutorials online. Here are few:
+If you've never soldered before, watch some online tutorials and 
+practice before you go into touching the components. It's easy to solder but 
+hard to take out sometime.  Here are few good online videos:
 
-* `Sparkfun tutorial <http://www.sparkfun.com/tutorials/106>`_.
-* `Adafruit tutorial <http://www.ladyada.net/learn/soldering/thm.html>`_.
-* `Soldering tutorial at aaroncake.net <http://www.aaroncake.net/electronics/solder.htm>`_
+* `Sparkfun tutorial <http://www.sparkfun.com/tutorials/106>`_
+* `Adafruit tutorial <http://www.ladyada.net/learn/soldering/thm.html>`_
+* `Soldering tutorial at aaroncake.net <http://www.aaroncake.net/electronics/solder.htm>`
 
 `Back to top`_
 
 
 Soldering the Parts
--------------------
+---------------------
 
-Through-hole soldering is pretty fun and straight forward! Make sure you work in a well ventilated room.
-Now, all you need is some solder and a soldering iron. When we are done with the
-assembly, your LEDI board will look like this:
+Work in a well ventilated room. When we are done with the assembly, your LEDI board will look like this:
 
 |completed1|
 
-The parts are easier to find once you organize them. It's good to label similar
-looking parts beforehand, so you know exactly which part you are going to solder.
-For example, here's how I organized the parts before soldering.
+Organize and label parts beforehand, here's how I organized mine before soldering.
 
 |parts1|
 
-It's good to complete similar parts of the circuit and then move onto the next. 
-This way, you can make sure you got all the parts soldered in the right place,
-instead of jumping around the circuit. (not literally!)
+As good practice, complete section by section before move to next instead of jumping around the circuit. 
 
 .. _`LEDI PCB`:
 
-LEDI circuit can be roughly divided into 4 sections. We will complete each section
-at a time before moving onto the next. 
+LEDI circuit can be roughly divided into 4 sections. 
 
 |tut_overview1|
 
 You will soon see that soldering LEDI board is easy and straight-forward.
 
- 
-Power supply circuit
-~~~~~~~~~~~~~~~~~~~~
-You will need to be careful about the polarity of the electrolyte capacitors.
-The shorter leg is the negative side. It's this shorter leg that will connect
-to ground. The same goes for the power indicator LED. The shorter leg connects
-to the ground through-hole, which is denoted with a minus "-" sign.
 
-|tut_pwr1|
+**Power supply circuit**
 
-Here's how I placed the parts before soldering. Notice the legs are bent on the
-other side of the PCB so that they are held stationary as I solder them permanently
-in place.
+  - Be careful about the polarity of the electrolyte capacitors, diodes and LED.
+  - The shorter leg is the negative side and should connect to ground which is denoted with a minus "-" sign on PCB.  |tut_pwr1|
 
-|tut_pwr2|
+  Here's how I placed the parts before soldering. Notice the legs are bent on the
+  other side of the PCB so that they are held stationary as I solder them permanently
+  in place.  |tut_pwr2|
 
 
-Bluetooth module
-~~~~~~~~~~~~~~~~
-The bluetooth module is the hardest part to solder. You will find that the rest of
-what follows is a breeze. First place the bluetooth module on the PCB.
-You will solder just one pad on each side first. This will hold the module in place.
+**Bluetooth module**
 
-You will only need to solder 11 joints on the module. The rest of the pads does not need 
-to be soldered. Those 11 joints are indicated by orange circle below:
+  - The bluetooth module is the hardest part to solderi coz of SMT instead of throughhole
+  - Place the bluetooth module on the PCB, solder just one pad on each side first to hold it in place.
+  - Only 11 joints need to be soldered. They are indicated by orange circles below: |tut_bt2|
 
-|tut_bt2|
+  If you have the flux handy, it helps the solder to flow onto the pads easily.
+  You can use it to "tin" the pads by
 
-If you have the flux handy, it helps the solder to flow onto the pads easily.
-You can use it to "tin" the pads by
+  #. applying little bit of flux onto the PCB pads
+  #. put some solder on the soldering iron, and gently pass it over the pads
 
-#. applying little bit of flux onto the PCB pads
-#. put some solder on the soldering iron, and gently pass it over the pads
+  At this point, solder flows to the pads and settle. Once the pads are tinned
+  with solder, set the bluetooth module on top, and touch the pad to
+  reflow the solder onto the bluetooth connection grooves.
 
-At this point, the solder will flow to the pads and settle. Once the pads are tinned
-with solder, you can simply set the bluetooth module on top, and touch the pad to
-reflow the solder onto the bluetooth connection grooves.
-
-Once the bluetooth module is soldered, solder the indicator LED and resistors 
-around the bluetooth module. The headers are optional, unless you plan to hack around
-with LEDI later on.
+  Once the bluetooth module is soldered, solder the indicator LED and resistors 
+  around the bluetooth module. The headers are optional, if you plan to hack around
+  with LEDI later on.
 
 
-Zener diode voltage regulator circuit 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-It's crucial to get the resistor value right here. You will need 15 Ohm (not 15k!!!)
-resistor, a zener diode, and a 0.1uF capacitor. As a reminder, resistor strip colors are::
+**Zener diode voltage regulator circuit**
+
+  It's crucial to get the right components in this section. We need a 15 Ohm (not 15k!!!)
+  resistor, a zener diode, and a 0.1uF capacitor. As a reminder, resistor strip colors are::
      
-      1     5    0x  tolerance  ==  15 ohm
-  brown green black  gold
+      1     5    0     x0.1   ==  15 ohm
+    brown green black  gold 
 
-The zener diode need special attention as well. Make sure you align the black strip
-side with the side that has white line on the PCB. It should look like the following picture.
+  Make sure you align the black strip side on the zener diode with the side that has white 
+  line on the PCB as indicated here: |tut_zener1|
 
-|tut_zener1|
-
-You can then add the push button that will allow you to reset the bluetooth module.
-Optionally, you can add the headers that will give you access to the bluetooth module's UART ports.
-
-After this circuit is built, you are ready to do your first test! Simply plug in the 9V
-power adaptor to the wall, and connect the barrel jack to the board. Take a deep breath
-and turn the switch to "on" position!
-
-Do you see the power LED light up and the indicator LED near the bluetooth module
-blinking? If so, you are on your way to getting it successfully built!
-If not, you will need to check your components and make sure you soldered the
-parts correctly.
+  - The push button allows you to reset the bluetooth module.
+  - Optionally, add the headers for access to the bluetooth module's UART ports.
+  - Test the circuit by powering it on with the AC-9VDC adaptor plugged in.
+  - If the indicator LED near the bluetooth module blinking, that mean you are on your way to getting it successfully built!
+  - If not, check your components and make sure you soldered the parts correctly.
  
 
-Atmega328p microcontroller and headers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is the easiest part of the circuit. You have one pull up resistor (10k ohm), 3 buttons,
-watch crystal (32.768kHz) and IC socket. The microcontroller will be inserted into the IC
-socket once everything is soldered in place.
+**Atmega328p microcontroller and headers**
 
-|mcusection1|
+  This is the easiest part of the circuit. You have one pull up resistor (10k ohm), 3 buttons,
+  watch crystal (32.768kHz) and IC socket. Insert the microcontroller into the IC
+  socket once everything is soldered in place.
 
-The 2x3 header on the bottom right corner is a must if you plan on flashing the firmware.
-By default, LEDI will come preloaded with the most recent firmware. However, if you plan
-on doing firmware development and modify functionality, solder the 2x3 header there.
+  |mcusection1|
 
-Also, the 1x8 header gives you access to unused I/O pins on the microcontroller. Solder this
-too if you want to make LEDI interface with other electronics.
-
+  - The 2x3 header on the bottom right corner is a must if you plan on flashing the firmware.
+  - By default, LEDI come preloaded with the most recent firmware. 
+  - If you plan on doing firmware development and modify functionality, solder the 2x3 header there.
+  - The 1x8 header gives you access to unused I/O pins on the microcontroller. 
+  - Solder the 1x8 header if you want to make LEDI interface with other electronics.
+  
 
 `Back to top`_
 
@@ -397,6 +376,8 @@ If you opt to use our customed made acrylic mount, here's the detail instruction
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_zener1.jpg
 .. |tut_conn1| image:: /nas/docs/techversat/web/product_img/tut_conn1.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_conn1.jpg
+.. |tut_cap_neg| image:: http://techversat.com/wp-content/uploads/ledi/tut_cap_neg.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_cap_neg.jpg
 
 .. |completed1| image:: /nas/docs/techversat/web/product_img/completed1.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/completed1.jpg
