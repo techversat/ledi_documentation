@@ -6,12 +6,12 @@
 0x05 LEDI Development
 =====================
 
-There are various ways you can modify and tune LEDI. The development involving
-our device spans, largely, 3 distinct programming areas:
+There are various ways you can modify and tune LEDI. Largely, there are 3 distinct
+development areas with LEDI::
 
-* microcontroller firmware
-* host PC interface software
-* Android interface software
+#. Microcontroller firmware development
+#. Android app development
+#. Host PC interface development
 
 You can tackle any of these areas to hack LEDI. Within the confines of LEDI
 hardware, your imagination is the only limit on how you choose to extend
@@ -22,25 +22,30 @@ Obtaining the Source Code
 -------------------------
 
 At the core, LEDI uses the same microcontroller that powers the Arduino Duemilanove.
-This microcontroller, Atmega328p, is a wildly popular device. It's often used
+This microcontroller, **Atmega328p**, is a wildly popular device. It's often used
 in many hobbist projects because of its 1) opensource toolchain 2) powerful
 features, and 3) expansive AVR community their myriad of projects.
 
-The firmware is written in C. It does not rely on any of the Arduino libraries,
+It uses a bluetooth module for wireless communication, and also exposes the same
+UART lines to be used against the PC over serial to usb bridge.
+
+The firmware is written in C. Android app is all in Java. Hardware schematics are
+created in Cadsoft Eagle. All the source code, documentation, and schematics are
+available online. The source code and documentation files are provided as-is, completely
+open source and no strings attached.
+
+====================  ==============================================================
+Name                  Git Project Page
+====================  ==============================================================
+Firmware source       https://github.com/techversat/ledi_firmware 
+Android App source    https://github.com/techversat/ledi_android
+Hardware Schematics   https://github.com/techversat/ledi_hardware
+Documentation (RST)   https://github.com/techversat/ledi_documentation
+====================  ==============================================================
+
+It does not rely on any of the Arduino libraries,
 and conscious effort has been made to keep the firmware as lean as possible.
-First, download the source from github::
 
-  cd $HOME
-  mkdir git
-  git clone git@github.com:jbremnant/project_ledi.git
-
-
-Under ``project_ledi`` directory, you will see these directories:
-
-* `doc`  contains documentation materials, including this tutorial
-* `fw`   contains firmware source code
-* `hw`   contains design files for the PCB  
-* `sw`   contains PC interface source, Android interface source
 
 
 This directory contains the source code for the firmware of LEDI project.
