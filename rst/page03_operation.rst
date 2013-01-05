@@ -19,30 +19,11 @@ operating modes. Also in addition to HH:MM clock digits, you will see the binary
 indicator ticking every second. 
 
 
-Power Switches
---------------
-There are 2 slide switches on the board. With the barrel jack faced down, the 
-slide switch left of it is "on/off" switch. The slide switch to the right of the
-barrel jack is the "3v/5v" toggle switch. Slide the power switch up to turn the
-power on and supply regulated 5 volts to the circuit.
-
-
-Tactile Buttons
----------------
-There are 4 buttons on the board.
-
-* 1st button resets the device
-* 2nd button puts LEDI into Conway's Game-of-Life display mode
-* 3rd button allows you to set the time
-  - short press for incrementing one minute at a time
-  - long press for fast-forwarding time
-* 4th button (located near Bluetooth module) resets the bluetooth module.
-
-
 Bluetooth Pairing
 -----------------
 Everytime LEDI's power is reset, the bluetooth module will go into discoverable mode.
-Other bluetooth devices can easily scan and pair with LEDI. 
+Other bluetooth devices can easily scan and pair with LEDI. You will first need to
+pair LEDI with your Android device.
 
 Let's first "bond" with LEDI using an Android phone. Go to::
 
@@ -59,7 +40,6 @@ Use the passcode **1234** to establish the pairing.
 
 LEDIManager Android App
 -----------------------
-
 |icon1|
 
 We have written an Android app specifically designed to work with LEDI. This app is the
@@ -80,6 +60,7 @@ When you start the app
 Your app will look like this:
 
 |screen_off|
+
 
 
 Other Android Apps
@@ -122,15 +103,42 @@ simplest one to use when I was testing LEDI.
 Hopefully, you will see the message you just typed scroll across LEDI.
 
 
+Power Switches
+--------------
+There are 2 slide switches on the board. With the barrel jack faced down, the
+slide switch left of it is "on/off" switch. The slide switch to the right of the
+barrel jack is the "3v/5v" toggle switch. Slide the power switch up to turn the
+power on and supply regulated 5 volts to the circuit.
+
+
+Tactile Buttons
+---------------
+There are 4 buttons on the board.
+
+====================  =========================================================
+Button Name           Description
+====================  =========================================================
+Reset                 Located at the top, resets the microcontroller
+Programmable Btn1     Currently puts LEDI into Conway's game-of-life display
+Programmable Btn2     Allows you to manually adjust time (short, long presses)
+Bluetooth Reset       Located near bluetooth module, resets the module
+====================  =========================================================
+
+The behavior of both programmable buttons can be changed in the firmware.
+
+
 Power Supply
 ------------
 
-The power circuit gives you options. Sometimes options are good, but sometimes they can be confusing.
-Hopefully the DC power circuit in LEDI can prove to be the prior. We've taken the power schematics 
-from Sparkfun_'s breadboard power supply.
+The power circuit supplies either 5v or 3.3v of clean DC. There are access headers
+to either
 
-This power circuit provides clean 5v or 3.3v DC. You can source power from an external battery through
-the connector shown in the picture:
+1. source power from other external voltage source (upto 9VDC)
+2. supply power to other circuits (5 or 3.3v)
+
+We've taken the power schematics from Sparkfun_'s breadboard power supply.
+
+You can source power from an external battery through the connector shown in the picture:
 
 .. insert pic here
 
