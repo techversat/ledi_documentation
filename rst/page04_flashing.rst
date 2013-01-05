@@ -29,16 +29,23 @@ make any of the programmers mentioned in this tutorial.
 
 Obtaining the Firmware
 ----------------------
-All the latest code is in git repository: https://github.com/techversat/ledi_firmware
+All the latest code is in git repository:
+
+  https://github.com/techversat/ledi_firmware
+
 The latest firmware will be placed under
 
-https://github.com/techversat/ledi_firmware/tree/master/bin
+  https://github.com/techversat/ledi_firmware/tree/master/bin
 
 You can also easily pull the entire project from git::
 
   git clone https://github.com/techversat/ledi_firmware.git	
   # or
   git clone git@github.com:techversat/ledi_firmware.git
+
+If you are new to git, we suggest reading this page first:
+
+  https://help.github.com/articles/set-up-git
 
 
 Choosing the Programmer
@@ -133,14 +140,22 @@ cable will align::
 
 Flash with New Firmware
 -----------------------
-Simply run the appropriate commands for the programmer you chose.
-It assumes your firmware file is named `main.hex`.
 
-**avrisp mkII and avrisp clone**::
+If you have downloaded the ledi_firmware repository, you can also simply do::
+
+  cd ledi_firmware/src
+  make upload
+  make tinyisp
+
+If you only downloaded the firmware file, run the following commands for
+the programmer you own. It assumes your firmware file is named `main.hex` and
+exists in current working directory.
+
+**avrisp mkII or avrisp clone**::
 
   avrdude -V -F -P usb -c avrispmkII -p m328p -U flash:w:main.hex
 
-**litlewire and usbtiny**::
+**litlewire or usbtiny**::
 
   avrdude -V -F -c usbtiny -p m328p -U flash:w:main.hex
 
