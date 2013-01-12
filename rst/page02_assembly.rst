@@ -223,7 +223,7 @@ hard to take out sometime.  Here are few good online videos:
 
 * `Sparkfun tutorial <http://www.sparkfun.com/tutorials/106>`_
 * `Adafruit tutorial <http://www.ladyada.net/learn/soldering/thm.html>`_
-* `Soldering tutorial at aaroncake.net <http://www.aaroncake.net/electronics/solder.htm>`
+* `Soldering tutorial at aaroncake.net <http://www.aaroncake.net/electronics/solder.htm>`_
 
 `Back to top`_
 

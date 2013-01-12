@@ -150,34 +150,34 @@ For example, I am powering the Arduino via the power output pins:
 
 
 .. |icon1| image:: /nas/docs/techversat/web/img/android_ledi_96x96.png
-   :uploaded: http://techversat.com/wp-content/uploads//android_ledi_96x96.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/android_ledi_96x96.png
 .. |screen_on| image:: /nas/docs/techversat/web/img/screenshot_onex_on.png
-   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_on-scale50.png
-   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_on.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_on-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_on.png
    :scale: 50
    :width: 300
 .. |screen_off| image:: /nas/docs/techversat/web/img/screenshot_onex_off.png
-   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_off-scale50.png
-   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_off.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_off-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_off.png
    :scale: 50
    :width: 300
 .. |screen_search| image:: /nas/docs/techversat/web/img/screenshot_onex_search.png
-   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_search-scale50.png
-   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_search.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_search-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_search.png
    :scale: 50
    :width: 300
 .. |screen_select| image:: /nas/docs/techversat/web/img/screenshot_onex_search2.png
-   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_search2-scale50.png
-   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_search2.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_search2-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_search2.png
    :scale: 50
    :width: 300
 .. |screen_vledi1| image:: /nas/docs/techversat/web/img/screenshot_onex_vledi1.png
-   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_vledi1-scale50.png
-   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_vledi1.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_vledi1-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_vledi1.png
    :scale: 50
    :width: 600
 .. |screen_vledi2| image:: /nas/docs/techversat/web/img/screenshot_onex_vledi2.png
-   :uploaded-scale50: http://techversat.com/wp-content/uploads//screenshot_onex_vledi2-scale50.png
-   :uploaded: http://techversat.com/wp-content/uploads//screenshot_onex_vledi2.png
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_vledi2-scale50.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_vledi2.png
    :scale: 50
    :width: 600
