@@ -169,7 +169,7 @@ exists in current working directory.
 
   avrdude -V -F -P usb -c avrispmkII -p m328p -U flash:w:main.hex
 
-**litlewire or usbtiny**::
+**littlewire or usbtiny**::
 
   avrdude -V -F -c usbtiny -p m328p -U flash:w:main.hex
 
