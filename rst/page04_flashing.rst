@@ -29,7 +29,7 @@ make any of the programmers mentioned in this tutorial.
 
 Obtaining the Firmware
 ----------------------
-All the latest code is in git repository:
+The latest firmware source code is in git repository:
 
   https://github.com/techversat/ledi_firmware
 
@@ -44,8 +44,7 @@ You can also easily pull the entire project from git::
   git clone git@github.com:techversat/ledi_firmware.git
 
 If you are new to git, we suggest reading this page first:
-
-  https://help.github.com/articles/set-up-git
+https://help.github.com/articles/set-up-git
 
 
 Choosing the Programmer
@@ -53,6 +52,8 @@ Choosing the Programmer
 Atmel's microcontrollers are quite popular with the hobbyist community. As such,
 there are variety of hardware choices available. We've listed some of the programmers
 we've personally tested.
+
+|programmers1|
 
 =================  ===================  =======================================
 Programmer         Synopsis             Comments
@@ -133,18 +134,31 @@ annotated with a small triangle. That's where the red strip on the ribbon
 cable will align::
 
   /-----------\
-  | o   o   o | <- first pin    
+  | o   o   o | <- first pin (MISO)   
   | o   o   o |
   \-----------/
+
+Here's how the ribbon cable is connected to the LEDI board:
+
+|connect1|
+
+Notice the small triangle engraving on the ribbon cable adaptor. The triangle 
+points to the first pin, the same pin where the red strip corresponds to.
+
+|connect2|
 
 
 Flash with New Firmware
 -----------------------
 
+Once you have the programmer connected to the LEDI board, and the programmer
+is connected to the USB port on your PC, you are ready to flash the firmware.
+
 If you have downloaded the ledi_firmware repository, you can also simply do::
 
   cd ledi_firmware/src
   make upload
+  # or if you have tinyisp, littlewire
   make tinyisp
 
 If you only downloaded the firmware file, run the following commands for
@@ -160,3 +174,46 @@ exists in current working directory.
   avrdude -V -F -c usbtiny -p m328p -U flash:w:main.hex
 
 
+Troubleshooting
+---------------
+* If you have Atmel's avrispmkII, make sure you power LEDI with the DC adaptor.
+  The programmer does not supply power to the board, and the board will simply
+  be off if you only had avrispmkII plugged in.
+
+* To confirm whether your PC sees the programmer, you can try the following
+  command on linux. It should show a device with USB signature `03eb`::
+
+    $ lsusb | grep -i atmel
+    Bus 002 Device 011: ID 03eb:2104 Atmel Corp. AVR ISP mkII
+
+* Make sure you have the correct connection of the programmer to the LEDI board.
+  Verify the pinouts of your programmer and match the pinouts on the LEDI board::
+
+    LEDI ISP Connection
+              M
+      R   C   I
+      S   L   S
+      T   K   O
+    /-----------\
+    | o   o   o | <- first pin (MISO)   
+    | o   o   o |
+    \-----------/
+      G   M   V+
+      N   O
+      D   S
+          I
+
+.. |programmers1| image:: /nas/docs/techversat/web/product_img/IMAG0248.jpg
+   :uploaded-scale40: http://techversat.com/wp-content/uploads/ledi/IMAG0248-scale40.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/IMAG0248.jpg
+   :scale: 40
+ 
+.. |connect1| image:: /nas/docs/techversat/web/product_img/IMAG0250.jpg
+   :uploaded-scale40: http://techversat.com/wp-content/uploads/ledi/IMAG0250-scale40.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/IMAG0250.jpg
+   :scale: 40
+
+.. |connect2| image:: /nas/docs/techversat/web/product_img/IMAG0251.jpg
+   :uploaded-scale40: http://techversat.com/wp-content/uploads/ledi/IMAG0251-scale40.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/IMAG0251.jpg
+   :scale: 40

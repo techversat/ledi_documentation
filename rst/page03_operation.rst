@@ -61,6 +61,42 @@ Your app will look like this:
 
 |screen_off|
 
+First search for your LEDI and bond with it, by pressing the "Search" button on the App.
+If you haven't already paired against it, it will prompt you for the passcode for pairing.
+(Remember **1234** to pair)
+
+|screen_search|
+
+Once the search is done, select your LEDI. After your device is selected, it will bring 
+you back to the main screen.
+
+|screen_select|
+
+
+Establish connection
+~~~~~~~~~~~~~~~~~~~~
+Press the large button on top that says "service off". It's a toggle button that will 
+turn green when the connection is properly established. If successful, your screen will
+look like this, and LEDI will greet you with a chime.
+
+|screen_on|
+
+
+Send Commands
+~~~~~~~~~~~~~
+You can send simple messages to LEDI from a text box on the bottom of the screen, and
+then hitting "Send". This will scroll your text across LEDI.
+
+
+Test Virtual LEDI
+~~~~~~~~~~~~~~~~~
+You'll notice that there's a button called vLEDI. This interface allows you to "draw" on
+LEDI from your Android. You can trace your finger across the virtual LEDI screen and see
+the same dots lit up on your LEDI!
+
+|screen_vledi1|
+
+|screen_vledi2|
 
 
 Other Android Apps
@@ -75,20 +111,10 @@ free. For example, I've tested:
 LEDI uses Bluetooth module that understands SPP (Serial Port Profile). What this
 basically means is that it's compatible with lots of bluetooth-enabled software out there.
 
-We have interesting set of features planned for our Android App:
 
-* Virtual LEDI face that will give you the ability to light up individual led
-* Notification forwarding (email, sms, text msg, etc..)
-* Automatic clock time setting
-
-We also welcome open source contributions! If you have ideas and would like to help writing
-the Android app, please `contact us <http://techversat.com/about-us/contact-us/>`_!
-
-
-Talk to It
-----------
-
-Let's try downloading BlueTerm_ from the App store on your phone. I found it to be the 
+Talk to it
+~~~~~~~~~~
+Try downloading BlueTerm_ from the App store on your phone. I found it to be the 
 simplest one to use when I was testing LEDI.
 
 #. Open the App
@@ -100,7 +126,7 @@ simplest one to use when I was testing LEDI.
 #. Type something on the terminal
 #. Hit "enter" on your virtual keyboard
 
-Hopefully, you will see the message you just typed scroll across LEDI.
+If everything went right, you will see the message you just typed scroll across LEDI.
 
 
 Power Switches
