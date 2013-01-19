@@ -12,6 +12,24 @@ set it up and operate it. From here on, we will assume you have
 a completely assembled LEDI. We also assume you have an Android phone that
 can be used to communicate with LEDI.
 
+Most features of LEDI can be controlled via Android App, LEDI Manager.
+It gives you the ability to interact with it without much fuss, and gives you
+intuitive control over electronics circuit you've assembled.
+
+First download the App from Google Play:
+
+  LEDIManager_
+
+.. _LEDIManager: https://play.google.com/store/apps/details?id=com.techversat.ledimanager&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS50ZWNodmVyc2F0LmxlZGltYW5hZ2VyIl0.
+
+|ledimanager_screenshot|
+
+
+Power up LEDI
+-------------
+Simply turn the power switch to the "on" position. Also, make sure the power supply
+voltage switch is set to "5v".
+
 When it's first powered up, LEDI will go into a clock mode. The clock starts
 at "00:00", since LEDI does not keep track of time when it's powered off.
 Once powered on, however, it will constantly keep accurate time across various
@@ -21,6 +39,8 @@ indicator ticking every second.
 
 Bluetooth Pairing
 -----------------
+First, make sure Bluetooth radio is turned on in `Settings`.
+
 Everytime LEDI's power is reset, the bluetooth module will go into discoverable mode.
 Other bluetooth devices can easily scan and pair with LEDI. You will first need to
 pair LEDI with your Android device.
@@ -54,6 +74,7 @@ The current list of LEDIManager features:
 #. Remotely set current time
 #. Send arbitrary message from your Android phone
 #. Virtual interface that allows you to "draw" on LEDI wirelessly
+
 
 When you start the app
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -214,3 +235,6 @@ For example, I am powering the Arduino via the power output pins:
    :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_vledi2.png
    :scale: 50
    :width: 600
+.. |ledimanager_screenshot| image:: /nas/docs/techversat/web/img/ledimanager_googleplay1.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/ledimanager_googleplay1.png
+
