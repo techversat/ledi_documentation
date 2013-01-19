@@ -32,7 +32,7 @@ Let's first "bond" with LEDI using an Android phone. Go to::
 Hit **scan** for devices. Your device should show up and it will be called either 
 
 * linvor
-* HC-06
+* HC-05
 
 Select the device and you will get a bluetooth pairing request.
 Use the passcode **1234** to establish the pairing.
@@ -101,11 +101,10 @@ the same dots lit up on your LEDI!
 
 Other Android Apps
 ------------------
-We are currently working on making a customized Android app for LEDI. In the meantime,
-there are slew of available Android Apps that just works with LEDI. Almost all of them are
-free. For example, I've tested:
+There are slew of available Android Apps that just works with LEDI.
+Almost all of them are free. For example, I've tested:
 
-* SENA_ BTerm Bluetooth Terminal 
+* Sena_ BTerm Bluetooth Terminal 
 * BlueTerm_
 
 LEDI uses Bluetooth module that understands SPP (Serial Port Profile). What this
