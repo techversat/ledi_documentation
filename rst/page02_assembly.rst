@@ -84,7 +84,7 @@ the strip color specified above only indicates the resistor value portion.
 Refer to the Resistor_ section to understand how to read the stripes value.
 
 
-**If you are purchasing the acrylic mount**, the package should also include:
+**If you purchased the acrylic mount**, the package should also include:
 
 ======================  =========  ==================================================  ==============
 Name                    Quantity   Description                                         Image
@@ -118,7 +118,13 @@ used in this project.
    - Look like aluminum cylinders wrapped in black plastic with one short and one long leg. 
    - **ORIENTATION MATTERS** while you are placing this component on the PCB. 
    - The short leg, the side with strip, is **the negative (-) terminal**. 
-   - In our design, negative terminal connects to GROUND and have a negative sign bar on the PCB. |tut_cap_neg|
+   - In our PCB, negative terminal connects to GROUND and have a negative sign bar on the PCB. |tut_neg|
+
++ **Ceramic Capacitor** (`wiki ceramic capacitor <http://en.wikipedia.org/wiki/Ceramic_capacitor>`_)
+   |pt_cap01|
+
+   - Unlike electrolytic capacitor introduced above, there is no polarity for ceramic capacitor.
+   - Therefore orientation **DOES NOT** matters.
 
 .. _Rectifier:
 
@@ -247,7 +253,23 @@ LEDI circuit can be roughly divided into 4 sections.
 
 |tut_overview1|
 
-You will soon see that soldering LEDI board is easy and straight-forward.
+In this circuit, the hardest part is to solder is the SMT (Surface mount) Bluetooth module. It is better to start with it first before the board get overcrowded by other components. 
+ 
+**Bluetooth module**
+
+  Flux helps the solder to flow onto the pads easily. You can use it to "tin" the pads by:
+
+  #. Applying little bit of flux onto the PCB pads
+  #. Put some solder on the soldering iron, and gently pass it over the pads, at this point, 
+     solder flows to the pads and settle. 
+  #. Once the pads are tinned with solder, set the bluetooth module on top
+  #. Touch the pad to reflow the solder onto the bluetooth connection grooves.
+  #. Solder just one pad on each side first to hold it in place.
+  #. In this circuit, only 11 joints need to be soldered. |tut_bt2|
+
+  Once the bluetooth module is soldered, solder the indicator LED and resistors
+  around the bluetooth module. The headers are optional, if you plan to hack around
+  with LEDI later on.
 
 
 **Power supply circuit**
@@ -258,27 +280,6 @@ You will soon see that soldering LEDI board is easy and straight-forward.
   Here's how I placed the parts before soldering. Notice the legs are bent on the
   other side of the PCB so that they are held stationary as I solder them permanently
   in place.  |tut_pwr2|
-
-
-**Bluetooth module**
-
-  - The bluetooth module is the hardest part to solderi coz of SMT instead of throughhole
-  - Place the bluetooth module on the PCB, solder just one pad on each side first to hold it in place.
-  - Only 11 joints need to be soldered. They are indicated by orange circles below: |tut_bt2|
-
-  If you have the flux handy, it helps the solder to flow onto the pads easily.
-  You can use it to "tin" the pads by
-
-  #. applying little bit of flux onto the PCB pads
-  #. put some solder on the soldering iron, and gently pass it over the pads
-
-  At this point, solder flows to the pads and settle. Once the pads are tinned
-  with solder, set the bluetooth module on top, and touch the pad to
-  reflow the solder onto the bluetooth connection grooves.
-
-  Once the bluetooth module is soldered, solder the indicator LED and resistors 
-  around the bluetooth module. The headers are optional, if you plan to hack around
-  with LEDI later on.
 
 
 **Zener diode voltage regulator circuit**
@@ -333,10 +334,7 @@ Don't mind the other device on the picture right now (`little wire <http://littl
 this device can help flash the firmware of LEDI.
 
 Connect the other side of the ribbon cable to the LED matrix. Make sure your DIP switch on the
-LED matrix board looks like this:
-
-.. leesa, picture of the 1,2,3,4 switch on the backside of LED board
-
+LED matrix board is set to have 1 (on) and 2,3,4 (off). It looks like this: |tut_ledmtxBack|
 
 Once connected, time to power it on!
 Connect the included 9VDC adaptor to the barrel jack, and plug it to the wall outlet.
@@ -356,28 +354,59 @@ Now that the PCB and LED matrix work well, time to put a little cosmetic on it. 
 #. Use bricks to make the LEDI into a piece of artwork. 
 #. Or even print your own mount or enclosure if you have a 3D printer.
 
-If you opt to use our customed made acrylic mount, here's the detail instruction for the assembly.
+If you opt to use our customed made acrylic mount, below is the detail instruction for the assembly.
 
+List of parts:
+~~~~~~~~~~~~~~
+
+===== =========================  =========  ==================================================  ==============
+Index Name                       Quantity   Description                                         Image
+===== =========================  =========  ==================================================  ==============
+A     Spacer 1/8"                4          1/8" length nylon spacers                           |pt_spacer2|
+B     Spacer 1/4"                4          2/8" length nylon spacers                           |pt_spacer1|
+C     Spacer 3/4"                4          6/8" length nylon spacers                           |pt_spacer3|
+D     Screw 1-1/2"               4          1-1/2" stainless steel screw                        |pt_screw1|
+E     Screw 5/8                  4          5/8" stainless steel screw                          |pt_screw2|
+F     Nuts 4-40 thread           8          4-40 thread stainless steel hex nuts                |pt_nuts|
+G     Acrylic front plate        1          Transparent acrylic plate for front cover           |pt_front|
+H     Acrylic adaptor plate      2          Transparent acrylic adaptor                         |pt_Aadaptor|
+===== =========================  =========  ==================================================  ==============
+
+Steps:
+~~~~~~
+
+#. Assemble the PCB with the two adaptors (Click to enlarge image) |tut_mount1|
+#. Assemble the rest according to the sequence below :|tut_mount2| 
 
 `Back to top`_
 
 
-.. |tut_overview1| image:: /nas/docs/techversat/web/product_img/tut_overview1.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_overview1.jpg
+.. |tut_overview1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_overview.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_overview.jpg
 .. |tut_pwr1| image:: /nas/docs/techversat/web/product_img/tut_pwr1.JPG
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_pwr1.jpg
 .. |tut_pwr2| image:: /nas/docs/techversat/web/product_img/tut_pwr2.JPG
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_pwr2.jpg
 .. |tut_bt1| image:: /nas/docs/techversat/web/product_img/tut_bt1.JPG
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_bt1.jpg
-.. |tut_bt2| image:: /nas/docs/techversat/web/product_img/tut_bt2.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_bt2.jpg
+.. |tut_bt2| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_bt2.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_bt2.jpg
 .. |tut_zener1| image:: /nas/docs/techversat/web/product_img/tut_zener1.JPG
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_zener1.jpg
 .. |tut_conn1| image:: /nas/docs/techversat/web/product_img/tut_conn1.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_conn1.jpg
-.. |tut_cap_neg| image:: http://techversat.com/wp-content/uploads/ledi/tut_cap_neg.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_cap_neg.jpg
+.. |tut_neg| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_GndPole.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_GndPole.jpg
+.. |tut_ledmtxBack| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_LEDmtxBack.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_LEDmtxBack.jpg
+.. |tut_mount1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_MountAssembly1.jpg
+   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly1-scale701.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly11.jpg
+   :scale: 70
+.. |tut_mount2| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_MountAssembly2.jpg
+   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2-scale70.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2.jpg
+   :scale: 70
 
 .. |completed1| image:: /nas/docs/techversat/web/product_img/completed1.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/completed1.jpg
