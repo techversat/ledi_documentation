@@ -407,12 +407,12 @@ Steps:
 .. |tut_ledmtxBack| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_LEDmtxBack.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_LEDmtxBack.jpg
 .. |tut_mount1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_MountAssembly1.jpg
-   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly1-scale701.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly11.jpg
+   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly1-scale70.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly1.jpg
    :scale: 70
 .. |tut_mount2| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_MountAssembly2.jpg
-   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2-scale702.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly22.jpg
+   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2-scale70.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2.jpg
    :scale: 70
 
 .. |completed1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_completed.jpg
