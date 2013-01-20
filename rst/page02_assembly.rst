@@ -121,7 +121,8 @@ used in this project.
    - In our PCB, negative terminal connects to GROUND and have a negative sign bar on the PCB. |tut_neg|
 
 + **Ceramic Capacitor** (`wiki ceramic capacitor <http://en.wikipedia.org/wiki/Ceramic_capacitor>`_)
-   |pt_cap01|
+
+   |pt_ceramicCap|
 
    - Unlike electrolytic capacitor introduced above, there is no polarity for ceramic capacitor.
    - Therefore orientation **DOES NOT** matters.
@@ -274,13 +275,15 @@ In this circuit, the hardest part is to solder is the SMT (Surface mount) Blueto
 
 **Power supply circuit**
 
+  |tut_pwr1|
   - Be careful about the polarity of the electrolyte capacitors, diodes and LED.
-  - The shorter leg is the negative side and should connect to ground which is denoted with a minus "-" sign on PCB.  |tut_pwr1|
+  - The shorter leg is the negative side and should connect to ground which is denoted with a minus "-" sign on PCB.    |tut_neg|
 
   Here's how I placed the parts before soldering. Notice the legs are bent on the
   other side of the PCB so that they are held stationary as I solder them permanently
-  in place.  |tut_pwr2|
+  in place.  |tut_bendwire|
 
+  For the LDO regulator, the flat part should align with the white line at the silk screen. |tut_pwr2|
 
 **Zener diode voltage regulator circuit**
 
@@ -375,24 +378,28 @@ H     Acrylic adaptor plate      2          Transparent acrylic adaptor         
 Steps:
 ~~~~~~
 
-#. Assemble the PCB with the two adaptors (Click to enlarge image) |tut_mount1|
+#. Assemble the PCB with the two adaptors, keep antenna end on top and leave more space at bottom for 
+   the cable. (Click to enlarge image) |tut_mount1|
 #. Assemble the rest according to the sequence below :|tut_mount2| 
+#. Plug in the serial cable from LED matrix to PCB.
 
 `Back to top`_
 
 
 .. |tut_overview1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_overview.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_overview.jpg
-.. |tut_pwr1| image:: /nas/docs/techversat/web/product_img/tut_pwr1.JPG
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_pwr1.jpg
-.. |tut_pwr2| image:: /nas/docs/techversat/web/product_img/tut_pwr2.JPG
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_pwr2.jpg
+.. |tut_pwr1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_pwr1.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_pwr1.jpg
+.. |tut_bendwire| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_bendwire.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_bendwire.jpg
+.. |tut_pwr2| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_regulator.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_regulator.jpg
 .. |tut_bt1| image:: /nas/docs/techversat/web/product_img/tut_bt1.JPG
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_bt1.jpg
 .. |tut_bt2| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_bt2.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_bt2.jpg
-.. |tut_zener1| image:: /nas/docs/techversat/web/product_img/tut_zener1.JPG
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_zener1.jpg
+.. |tut_zener1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_zenerCircuit.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_zenerCircuit.jpg
 .. |tut_conn1| image:: /nas/docs/techversat/web/product_img/tut_conn1.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_conn1.jpg
 .. |tut_neg| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_GndPole.jpg
@@ -404,14 +411,14 @@ Steps:
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly11.jpg
    :scale: 70
 .. |tut_mount2| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_MountAssembly2.jpg
-   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2-scale70.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2.jpg
+   :uploaded-scale70: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly2-scale702.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MountAssembly22.jpg
    :scale: 70
 
-.. |completed1| image:: /nas/docs/techversat/web/product_img/completed1.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/completed1.jpg
-.. |completed2| image:: /nas/docs/techversat/web/product_img/completed_crop.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/completed_crop.jpg
+.. |completed1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_completed.jpg
+   :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/tut_ledi_completed-scale50.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_completed.jpg
+   :scale: 50
 
 .. |pcb1| image:: http://techversat.com/wp-content/uploads/2012/09/tut_pcb_close.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_pcb_close.jpg
@@ -427,8 +434,8 @@ Steps:
 .. |assembly-indexed| image:: http://techversat.com/wp-content/uploads/2012/09/parts_ledi_All-indexed.JPG
    :uploaded: http://techversat.com/wp-content/uploads/ledi/parts_ledi_All-indexed.jpg
 
-.. |mcusection1| image:: /nas/docs/techversat/web/product_img/mcusection1.jpg
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/mcusection1.jpg
+.. |mcusection1| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_MCUCircuit.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_MCUCircuit.jpg
 
 .. |soldering_iron| image:: http://www.mouser.com/images/cooperind/images/wtcpt_300.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/wtcpt_300.jpg
@@ -646,6 +653,10 @@ Steps:
 .. |pt_cap1| image:: /nas/docs/techversat/web/product_img/edited/parts_ledi_Capacitor-100uF.JPG
    :uploaded-scale10: http://techversat.com/wp-content/uploads/ledi/parts_ledi_Capacitor-100uF-scale10.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/parts_ledi_Capacitor-100uF.jpg
+   :scale: 10
+.. |pt_ceramicCap| image:: /nas/docs/techversat/web/product_img/edited/parts_ledi_Capacitor-0.1uF.JPG
+   :uploaded-scale10: http://techversat.com/wp-content/uploads/ledi/parts_ledi_Capacitor-0.1uF-scale10.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/parts_ledi_Capacitor-0.1uF.jpg
    :scale: 10
 .. |pt_diode| image:: /nas/docs/techversat/web/product_img/edited/parts_ledi_1N4001.JPG
    :uploaded-scale10: http://techversat.com/wp-content/uploads/ledi/parts_ledi_1N4001-scale10.jpg
