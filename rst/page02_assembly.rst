@@ -55,7 +55,7 @@ Tactile push button      4          buttons with 4 small legs                   
 Capacitor_ 100uF         1          cylinder shape, aluminum, 2 leads                   |pt_cap100|
 Capacitor_ 10uF          1          cylinder shape, aluminum, 2 leads                   |pt_cap10|
 Capacitor_ 0.1uF         2          blue ceramic capacitor                              |pt_cap01|
-`Zener Diode 3.3v`_      1          small orange component with black stripe            |pt_zener|
+`Zener Diode 3.3v`_      1          small orange component with black strip             |pt_zener|
 Rectifier_ 1N4001        1          convert AC to DC current                            |pt_1N4001|
 Resistor_ 16k Ohms       1          ^strip colors: brown,blue,black,red                 |pt_res16k|
 Resistor_ 10k Ohms       3          ^strip colors: brown,black,black,red                |pt_res10k|
@@ -125,7 +125,7 @@ used in this project.
    |pt_ceramicCap|
 
    - Unlike electrolytic capacitor introduced above, there is no polarity for ceramic capacitor.
-   - Therefore orientation **DOES NOT** matters.
+   - Therefore orientation **DOES NOT** matter.
 
 .. _Rectifier:
 
@@ -293,8 +293,9 @@ In this circuit, the hardest part is to solder is the SMT (Surface mount) Blueto
       1     5    0     x0.1   ==  15 ohm
     brown green black  gold 
 
-  Make sure you align the black strip side on the zener diode with the side that has white 
-  line on the PCB as indicated here: |tut_zener1|
+  Make sure you align the black strip on zener diode with the white line on the PCB as indicated here:
+
+  |tut_zener1|
 
   - The push button allows you to reset the bluetooth module.
   - Optionally, add the headers for access to the bluetooth module's UART ports.
