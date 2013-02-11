@@ -203,8 +203,9 @@ For example, I am powering the Arduino via the power output pins:
 .. _Sparkfun: https://www.sparkfun.com/products/114
 
 
-.. |icon1| image:: /nas/docs/techversat/web/img/android_ledi_96x96.png
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/android_ledi_96x96.png
+.. |icon1| image:: /nas/docs/techversat/web/icons/96x96_00.png
+   :uploaded: http://techversat.com/wp-content/uploads/96x96_00.png
+
 .. |screen_on| image:: /nas/docs/techversat/web/img/screenshot_onex_on.png
    :uploaded-scale50: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_on-scale50.png
    :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_on.png
@@ -235,6 +236,6 @@ For example, I am powering the Arduino via the power output pins:
    :uploaded: http://techversat.com/wp-content/uploads/ledi/screenshot_onex_vledi2.png
    :scale: 50
    :width: 600
-.. |ledimanager_screenshot| image:: /nas/docs/techversat/web/img/ledimanager_googleplay1.png
-   :uploaded: http://techversat.com/wp-content/uploads/ledi/ledimanager_googleplay1.png
+.. |ledimanager_screenshot| image:: /nas/docs/techversat/web/img/ledimanager_googleplay2.png
+   :uploaded: http://techversat.com/wp-content/uploads/ledimanager_googleplay2.png
 
