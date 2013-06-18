@@ -27,6 +27,19 @@ What You Need                    What It Is
 make any of the programmers mentioned in this tutorial. 
 
 
+Prerequisite
+------------
+
+The main clock source of LEDI is the internal RC oscillator. By default, the Atmega328p
+chips come with 2MHz max frequency on the internal clock. However, we need to overclock this.
+LEDI runs at 8MHz and in order to run at this higher frequency, you need to modify the *fuses*.
+
+In order to modify our chip to run at 8MHz, run this on your terminal.
+You will need avrdude to do this::
+
+  avrdude -F -p m328p -P usb -c avrispmkII -U lfuse:w:0xE2:m
+
+
 Obtaining the Firmware
 ----------------------
 The latest firmware source code is in git repository:
