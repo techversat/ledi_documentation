@@ -69,6 +69,7 @@ LED_ Amber               1          oval shape amber LED                        
 Piezo Buzzer             1          makes sounds                                        |pt_buzz|
 Header Single row        1          12 pins single row headers for breakout pins        |pt_header1|
 Header Dual row          1          2 x 15 header for connecting ribbon cable           |pt_header2|
+Jumper Cap               2          Jumper cap to set the jumper                        |pt_jumpcap|
 =======================  =========  ==================================================  ==============
 
 .. _`Bluetooth module`: http://imall.iteadstudio.com/prototyping/basic-module/im120723009.html
@@ -255,7 +256,9 @@ LEDI circuit can be roughly divided into 4 sections.
 |tut_overview1|
 
 In this circuit, the hardest part is to solder is the SMT (Surface mount) Bluetooth module. It is better to start with it first before the board get overcrowded by other components. 
- 
+
+For soldering beginners, it is easier to start soldering with the flattest component first and tallest last. In that case you can rest the board on the desk while soldering without too much wobbling.
+
 **Bluetooth module**
 
   Flux helps the solder to flow onto the pads easily. You can use it to "tin" the pads by:
@@ -325,29 +328,26 @@ In this circuit, the hardest part is to solder is the SMT (Surface mount) Blueto
 Testing the Circuit
 -------------------
 
-Now you are finally ready to test the whole thing!
-Let's first connect the LED matrix to the circuit board.
+  #. Connect the board with the wall adaptor. Switch the power to **on**. The power LED (yellow) should be ON indicating the circuit board is powered. The red LED should be blinking indicating the Bluetooth module is ready to be paired.  
+  #. If this step is good, then we are ready to connect it to the LED matrix.  Switch the LEDI **off**, unplug the adaptor first to be safe.
+  #. The ribbon cable has a red strip on one end. It denotes the first pin.  Align this with the CS1 pin labelled on the board. 
+  #. Add the jumper cap to complete the Bluetooth module and the microcontroller circuit.
+  #. All the LEDI chips are pre-flashed with updated firmware, but if you want to do it yourself or flash the firmware later on, you need to use a programmer like (`little wire <http://littlewire.cc/>`_).
 
-Note that the ribbon cable has a red strip on one end. The red strip denotes the first pin.
-Align this with the pin labelled CS1 on the circuit board.
 The PCB side of the ribbon cable connection looks like this:
 
-|tut_conn1|
-
-Don't mind the other device on the picture right now (`little wire <http://littlewire.cc/>`_) -
-this device can help flash the firmware of LEDI.
+|tut_cabNjump|
 
 Connect the other side of the ribbon cable to the LED matrix. Make sure your DIP switch on the
 LED matrix board is set to have 1 (on) and 2,3,4 (off). It looks like this: |tut_ledmtxBack|
 
-Once connected, time to power it on!
-Connect the included 9VDC adaptor to the barrel jack, and plug it to the wall outlet.
-Now, take a deep breath again and switch the power to **on**.
+Once connected, time to power it on again. 
 Did you see the sign "LEDI" on the LED matrix board? If so, congratulations!
-You have successfully assembled LEDI.
+You have successfully assembled LEDI. 
 
-There's so much more to play around with. Check out our other tutorials to explore many
-exciting projects with LEDI.
+
+If you are not using the acrylic mount, then you can go directly to the `next step<http://techversat.com/projects/ledi/operating-ledi/>`_, to install the LEDI app on your android phone to start playing around with it. 
+
 
 Assemblying the Acrylic Mount
 -----------------------------
@@ -403,6 +403,8 @@ Steps:
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_zenerCircuit.jpg
 .. |tut_conn1| image:: /nas/docs/techversat/web/product_img/tut_conn1.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_conn1.jpg
+.. |tut_cabNjump| image:: //nas/docs/techversat/web/product_img/edited/tut_cabNjump.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_cabNjump.jpg
 .. |tut_neg| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_GndPole.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/tut_ledi_GndPole.jpg
 .. |tut_ledmtxBack| image:: /nas/docs/techversat/web/product_img/edited/tut_ledi_LEDmtxBack.jpg
@@ -599,6 +601,11 @@ Steps:
 .. |pt_header2| image:: /nas/docs/techversat/web/product_img/edited/parts_ledi_DualHeader.JPG
    :uploaded-scale10: http://techversat.com/wp-content/uploads/ledi/parts_ledi_DualHeader-scale10.jpg
    :uploaded: http://techversat.com/wp-content/uploads/ledi/parts_ledi_DualHeader.jpg
+   :width: 1000
+   :scale: 10
+.. |pt_jumpcap| image:: //nas/docs/techversat/web/product_img/edited/parts_ledi_JumpCap.jpg
+   :uploaded-scale10: http://techversat.com/wp-content/uploads/ledi/parts_ledi_JumpCap-scale10.jpg
+   :uploaded: http://techversat.com/wp-content/uploads/ledi/parts_ledi_JumpCap.jpg
    :width: 1000
    :scale: 10
 .. |pt_ledmtx| image:: /nas/docs/techversat/web/product_img/edited/parts_ledi_LEDMatrix-32x8.JPG
